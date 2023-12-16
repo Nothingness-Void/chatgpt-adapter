@@ -19,4 +19,4 @@ FROM scratch
 COPY --from=builder /app/exec /app/exec
 
 # 设置容器启动时的默认命令
-CMD ["/app/exec", "--port", "8080", "--proxy", "http://127.0.0.1:7890"]
+CMD ["/app/exec", "--port", "8080", "]
