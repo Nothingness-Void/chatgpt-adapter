@@ -10,7 +10,7 @@ COPY . .
 # 设置 Go 环境变量并编译你的程序
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
-RUN GOOS=$(echo $TARGETPLATFORM | cut -f1 -d '/') GOARCH=$(echo $TARGETPLATFORM | cut -f2 -d '/') go build -o exec cmd/exec.go
+RUN GOOS=linux GOARCH=$(echo $TARGETPLATFORM | cut -f2 -d '/') go build -o exec cmd/exec.go
 
 # 使用 scratch 作为最小化的运行环境
 FROM scratch
